@@ -4,23 +4,15 @@ var dotenv = require('dotenv')
 
 dotenv.config(); //LOAD CONFIG
 
-// const pool = mysql.createPool({
-//     host: process.env.HOST,
-//     user: process.env.USER,
-//     port: 3306,
-//     password: process.env.PASSWORD,
-//     database: process.env.DATABASE,
-//     multipleStatements: true
-// });
-
 const pool = mysql.createPool({
-    host: "localhost",
-    user: "root",
+    host: process.env.HOST,
+    user: process.env.USER,
     port: 3306,
-    password: "1234",
-    database: "exercise2",
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
     multipleStatements: true
 });
+
 
 module.exports = {
     pool: pool
